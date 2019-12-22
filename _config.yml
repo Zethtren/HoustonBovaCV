@@ -23,7 +23,7 @@ email: Houston.Bova@Gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Machine Learning, Artificial Intelligence, and Big Data optimizations. Feel free to browse my projects and contact me for any questions
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://zethtren.github.io/HoustonBovaCV/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "HoustonBovaCV" # the base hostname & protocol for your site, e.g. http://example.com
 linkedin_username: houston-bova-36a111195
 github_username: Zethtren
 
