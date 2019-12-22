@@ -1,7 +1,7 @@
 ---
 layout: page
-title: My Mission
-permalink: /mission/
+title: About Me
+permalink: /about/
 ---
 
 # My Mission:
