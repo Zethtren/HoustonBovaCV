@@ -28,7 +28,7 @@ linkedin_username: houston-bova-36a111195
 github_username: Zethtren
 
 # Build settings
-theme: jekyll-theme-slate
+theme: minima
 plugins:
   - jekyll-feed
 
