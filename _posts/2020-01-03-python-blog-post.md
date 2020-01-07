@@ -5,9 +5,8 @@ date:   2020-01-03 12:30:00 -0500
 categories: jekyll update
 ---
 
-
-## Python 
-### Python is a calculator first
+# Python 
+## Python is a calculator first
 
 Like many programming languages Python's first function is that of a calculator. 
 
@@ -47,7 +46,7 @@ false
 ```
 
 
-### Variables
+## Variables
 
 You may notice that the True and False above are grey while the lowercase are not. That is because 
 
@@ -97,7 +96,7 @@ You may notice the comments trailing onto continuing lines it is convention to b
 I won't be doing this since markdown will format it to your screen size for me and this might actually make things look worse. However when writing code it is considered common practice to split your comments into easily readable lines.
 
 
-### Variable Math
+## Variable Math
 
 Above I mentioned usinng variables in math. You can do this a number of ways for a number of reasons. You can do this in order to assign value to equations that are pre-built, you can also do this to make code cleaner.
 
@@ -113,15 +112,27 @@ x = y + 7
 
 In this case x ends up being equal to 13. 
 
-For more advanced functions there is a large pool of modules which can be imported into the .py file, or .ipynb if you are working in Jupyter. 
+
+
+## Importing
+In python there are large libraries you can pull into your code to use from other files. My focus is on Data Science so these are some common modules used in basic Data Science. There are many more, some of which are not included with your standard python installation. These modules can often be installed using pip or conda ( Both of which are common installation libraries ). I won't get into that since if you need these more advanced modules you will likely have adequate resources available for installing them.
 
 ```python
-import pandas as pd # Common library for reading and 
-# modifying tabular data like excel files or csv files. 
-import numpy as np # Numpy is a common library for perform
-# vector maths such as linear algebra and working with multidimensional arrays.
-# It is convention to import all packages at the begininning of your work.
+import os
+import pandas as pd  
+import numpy as np 
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
 ```
+
+The first example above <code>import os</code> is a basic import. In order to call methods ( functions which are assigned to a class ) from this package you would include 'os.' before it [<code>os.mkdir('directory_path')</code>]. This example makes a directory folder at the path provided.
+
+ Pandas and Numpy were given abbreviated names when they were imported. So instead of having to type [<code>numpy.mean([1,3,4,5,2,1,8,12])</code>] you would type [<code>np.mean([1,3,4,5,2,1,8,12])</code>]. This code gets the mean of the list passed to it. 
+
+The sklearn import is actually a class. So we wouldn't be able to call it as a method instead we would instantiate it to a variable. [<code>model = LinearRegression()</code>] The key thing to take away from here is that you wouldn't need to add the [<code>sklearn.linear_model</code>] anywhere into the code when calling it. 
+
+
+### Functions
 
 In Python you can define your own functions to perform repeated tasks
 
