@@ -15,7 +15,7 @@ Like many programming languages Python's first function is that of a calculator.
 1 + 1 # Adding two numbers
 ```
 
-This will return 2 since Python, like most programming languages functions as a cluculator first. You can also see that anything following a hashtag is a comment which means it will not be executed. There are other basic calculator function included as well.
+This will return the value 2 since Python, like most programming languages functions as a calculator first. You can also see that anything following a hashtag is a comment. Comments are code which will not be executed. There are other basic calculator function included in Python as well.
 
 
 ```python
@@ -49,7 +49,7 @@ false
 
 ### Variables
 
-You may notice that the True and False above are green while the lowercase are not. That is because 
+You may notice that the True and False above are grey while the lowercase are not. That is because 
 
 ```python
 True and False
@@ -71,9 +71,11 @@ integers = -47 # Integers are whole numbers positive or negative
 
 floats = 0.1 # Floats are decimal numbers 
 
-doubles = 0.535334521233456 # Where originally large decimal numbers, 
-# however, they are interchangeable with floats in python. You will 
-# really only see them in numpy and even then will likely not use them.
+# There are also Doubles, although rarely used
+# In python they are basically interchangeable with Floats
+# But they are considered less efficient
+
+doubles = 0.535334521233456 
 ```
 
 Above I have assigned all of these different object types into variable whichg, by convention will be all lower case and if they are multiple words each word will be lowercase seperated by '_' (an under-score). 
@@ -109,9 +111,32 @@ x = y + 7
 # the left. This makes it easier to find defined variables later on. 
 ```
 
-So in this case x ends up being equal to 13. 
+In this case x ends up being equal to 13. 
+
+For more advanced functions there is a large pool of modules which can be imported into the .py file, or .ipynb if you are working in Jupyter. 
 
 ```python
-
-
+import pandas as pd # Common library for reading and 
+# modifying tabular data like excel files or csv files. 
+import numpy as np # Numpy is a common library for perform
+# vector maths such as linear algebra and working with multidimensional arrays.
+# It is convention to import all packages at the begininning of your work.
 ```
+
+In Python you can define your own functions to perform repeated tasks
+
+```python
+def quad_func(a,b,c):
+  discrim = (b**2) - (4 * a * c)
+  factor_a = (-b + (discrim)**(1/2)) / 2*a
+  factor_b = (-b - (discrim)**(1/2)) / 2*a
+  return factor_a, factor_b, discrim
+```
+
+The function above is a pythonic representation the quadratic formula. There are probably shorter and longer ways to write this. But as long as it functions and is easy to understand then the code is good. 
+
+```python
+quad_func(2,4,2)
+```
+
+Running the above code will return the values (-4.0, -4.0, 0) to the console. The first two values represent the 'zeroes' returned by solving a typical quadratic formula problem and the 0 is the result of the discriminant.
