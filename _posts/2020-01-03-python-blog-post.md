@@ -64,7 +64,8 @@ strings = 'Words or 21345'  # Can use single or double quotes,
 # however even a string is all numbers it cannot be used in 
 # math functions until it has been converted to an integer, float, or double
 
-boolean = True # Booleans are True and False. They can be used in many ways but are essentially represent by 1 for True and 0 for False 
+boolean = True # Booleans are True and False. They can be used in many ways
+# but are essentially represent by 1 for True and 0 for False 
 
 integers = -47 # Integers are whole numbers positive or negative
 
@@ -104,7 +105,8 @@ y = 6
 x = y + 7
 
 # Anytime you call y in the future it will be substituted with the value 6
-# This assigns the value of x to be y + 7. Variable are always assigned on the left. This makes it easier to find defined variables later on. 
+# This assigns the value of x to be y + 7. Variable are always assigned on
+# the left. This makes it easier to find defined variables later on. 
 ```
 
 So in this case x ends up being equal to 13. 
