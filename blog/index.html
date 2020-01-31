@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- Template by html.am -->
+<html>
+ <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <title>Houston Bova</title>
+   <style type="text/css">
+
+   body {
+     margin: 0;
+     padding: 0;
+     overflow: hidden;
+     height: 100%;
+     max-height: 100%;
+     font-family:Sans-serif;
+     line-height: 1.5em;
+   }
+
+   #header {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100px;
+     overflow: hidden; /* Disables scrollbars on the header frame. To enable scrollbars, change "hidden" to "scroll" */
+     background: #4B0082;
+   }
+
+   #nav {
+     position: absolute;
+     top: 100px;
+     left: 0;
+     bottom: 0;
+     width: 230px;
+     overflow: auto; /* Scrollbars will appear on this frame only when there's enough content to require scrolling. To disable scrollbars, change to "hidden", or use "scroll" to enable permanent scrollbars */
+     background: #9370DB;
+   }
+
+   #logo {
+     padding:10px;
+   }
+
+   main {
+     position: fixed;
+     top: 100px; /* Set this to the height of the header */
+     left: 230px;
+     right: 0;
+     bottom: 0;
+     overflow: auto;
+     background: #fff;
+   }
+
+   .innertube {
+     margin: 15px; /* Provides padding for the content */
+   }
+   .innertube img {
+     max-width: 100%;
+     height: auto;
+   }
+   p {
+     color: #555;
+   }
+
+   nav ul {
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+   }
+
+   nav a {
+     color: black;
+     text-decoration: none;
+   }
+
+   /*IE6 fix*/
+   * html body{
+     padding: 100px 0 0 230px; /* Set the first value to the height of the header and last value to the width of the nav */
+   }
+
+   * html main{
+     height: 100%;
+     width: 100%;
+   }
+
+   </style>
+ </head>
+
+ <body>
+
+   <header id="header">
+     <div id="logo">
+       <h1>Houston Bova</h1>
+     </div>
+   </header>
+
+   <main>
+     <div class="innertube">
+
+       <h1>Work Experience</h1>
+       <iframe src="https://public.tableau.com/views/Resume_15799138915280/Dashboard1?:showVizHome=no&:embed=yes&:toolbar=no&:showShareOptions=false&:showAppBanner=false"
+       width=100% height='350'></iframe>
+       <h1>About</h1>
+       <p></p>
+     </div>
+   </main>
+
+   <nav id="nav">
+     <div class="innertube">
+       <h1>Data Scientist</h1>
+       <img src="http://HoustonBova.com/imgs/houston.jpeg" alt="img not found">
+       <h1><a href="http://HoustonBova.com/projects">Projects</a></h1><hr>
+
+       <h1><a href="http://HoustonBova.com/blog">Blog</a></h1><hr>
+       <ul>
+         <li><a href="http://HoustonBova.com/blog/python" target="_blank">Python Lessons</a></li>
+         <li><a href="http://HoustonBova.com/blog/various" target="_blank">Blog Posts</a></li>
+       </ul>
+       <h1><a href="http://HoustonBova.com/contact">Contact</a></h1><hr>
+         
+       <ul>
+         <li><a href="https://www.linkedin.com/in/houston-bova-36a111195/" target="_blank">LinkedIn</a></li>
+         <li><a href="https://github.com/Zethtren" target="_blank">GitHub</a></li>
+         <li><a href="https://public.tableau.com/profile/houston.bova#!/" target="_blank">Tableau</a></li>
+         <li><a href="https://drive.google.com/drive/folders/1nOI0Qn4YIJ98EyYJvRNlgE-xVsQP6T1t?usp=sharing target="_blank"">Public Google Folder</a></li>
+       </ul>
+     </div>
+   </nav>
+ </body>
+</html>
