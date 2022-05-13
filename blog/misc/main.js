@@ -7,6 +7,7 @@ async function loadIntoTable(url, table) {
         method: "GET",
         mode: "cors",
         headers: {
+            'Access-Control-Request-Headers': 'Content-Type',
             'Content-Type': 'application/json'
         }
     });
