@@ -4,12 +4,7 @@ async function loadIntoTable(url, table) {
     const tableBody = table.querySelector("tbody");
     // Set CORS header to allow for REST API connection on Lambda
     const response = await fetch(url, {
-        method: "GET",
-        mode: "cors",
-        headers: {
-            'Access-Control-Request-Headers': 'Content-Type',
-            'Content-Type': 'application/json'
-        }
+        mode: 'cors'
     });
     // Read Data 
     const data = await response.json();
