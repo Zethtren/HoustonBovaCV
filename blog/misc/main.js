@@ -1,7 +1,12 @@
 async function loadIntoTable(url, table) {
     const tableHead = table.querySelector("thead");
     const tableBody = table.querySelector("tbody");
-    const response = await fetch(url);
+    var headers = {}
+    const response = await fetch(url, {
+        method: "GET",
+        mode: "cors",
+        headers: headers
+    });
     const data = await response.json();
     console.log(data)
     tableHead.innerHTML = "<tr></tr>";
