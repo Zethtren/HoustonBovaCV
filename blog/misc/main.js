@@ -1,13 +1,18 @@
 async function loadIntoTable(url, table) {
+    // Connect to HTML resources
     const tableHead = table.querySelector("thead");
     const tableBody = table.querySelector("tbody");
-    var headers = {"Access-Control-Allow-Origin": "*"};
+    // Set CORS header to allow for REST API connection on Lambda
     const response = await fetch(url, {
         method: "GET",
         mode: "cors",
-        headers: headers
+        headers: {
+            'Access-Control-Allow-Origin':'https://www.houstonbova.com'
+        }
     });
+    // Read Data 
     const data = await response.json();
+    // Temporarily log data to decide how to parse moving forward
     console.log(data)
     tableHead.innerHTML = "<tr></tr>";
     tableBody.innerHTML = "";
