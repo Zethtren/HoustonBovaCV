@@ -7,7 +7,7 @@ async function loadIntoTable(url, table) {
         method: "GET",
         mode: "cors",
         headers: {
-            'Access-Control-Allow-Origin':'https://www.houstonbova.com'
+            'Content-Type': 'application/json'
         }
     });
     // Read Data 
