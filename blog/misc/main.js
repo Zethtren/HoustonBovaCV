@@ -1,7 +1,7 @@
 async function loadIntoTable(url, table) {
     const tableHead = table.querySelector("thead");
     const tableBody = table.querySelector("tbody");
-    var headers = {}
+    var headers = {"Access-Control-Allow-Origin": "*"};
     const response = await fetch(url, {
         method: "GET",
         mode: "cors",
