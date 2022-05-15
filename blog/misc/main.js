@@ -1,44 +1,71 @@
-async function buildTable(tableBody, response) {
+// async function buildTable(tableBody, response) {
+//     const data = await response.json();
+
+//     for (item of data) {
+//         const rowElement = document.createElement("tr");
+//         const cellTitle = document.createElement("td");
+//         cellTitle.textContent = item['title'];
+//         rowElement.appendChild(cellTitle);
+//         const cellDate = document.createElement("td");
+//         cellDate.textContent = item['date'];
+//         rowElement.appendChild(cellDate);
+//         const cellPost = document.createElement("td");
+//         cellPost.textContent = item['post'];
+//         rowElement.appendChild(cellPost);
+
+//         tableBody.appendChild(rowElement);
+//     }
+// }
+
+// async function loadIntoTable(url, table) {
+//     // Connect to HTML resources;
+//     const tableBody = table.querySelector("tbody");
+//     // Replace previous table data to prevent duplication and stacking.
+//     tableBody.innerHTML = "";
+//     // Set CORS header to allow for REST API connection on Lambda
+//     // NOTE: CORS must be set on REST API as well
+//     // Server side will throttle connections but is otherwise not restricted to
+//     // any specific origin. This will change as I get more comfortable in this
+//     // development space.
+//     try {
+//         const response = await fetch(url, {
+//             method: 'GET',
+//             mode: 'cors'
+//         });
+//         try {
+//             buildTable(tableBody, response)
+//         } catch (error) {
+//             console.log("Error Reading Data");
+//         }
+//     } catch (error) {
+//         console.log("Error Fetching Data");
+//     }
+
+// }
+
+async function buildMarquee(marqueeBox, response) {
     const data = await response.json();
-
+    
     for (item of data) {
-        const rowElement = document.createElement("tr");
-        const cellTitle = document.createElement("td");
-        cellTitle.textContent = item['title'];
-        rowElement.appendChild(cellTitle);
-        const cellDate = document.createElement("td");
-        cellDate.textContent = item['date'];
-        rowElement.appendChild(cellDate);
-        const cellPost = document.createElement("td");
-        cellPost.textContent = item['post'];
-        rowElement.appendChild(cellPost);
-
-        tableBody.appendChild(rowElement);
+        const title = item['title']
+        const date_ = item['date']
+        const post_ = item['post']
+        console.log("<h2>"+title+"</h2>"+" -- "+date_+"<br>"+post_)
+        marqueeBox.innerHTML += ("<h2>"+title+"</h2>"+" -- "+date_+"<br>"+post_)
     }
 }
 
-async function loadIntoTable(url, table) {
-    // Connect to HTML resources;
-    const tableBody = table.querySelector("tbody");
-    // Replace previous table data to prevent duplication and stacking.
-    tableBody.innerHTML = "";
-    // Set CORS header to allow for REST API connection on Lambda
-    // NOTE: CORS must be set on REST API as well
-    try {
-        const response = await fetch(url, {
-            method: 'GET',
-            mode: 'cors'
-        });
-        try {
-            buildTable(tableBody, response)
-        } catch (error) {
-            console.log("Error Reading Data");
-        }
-    } catch (error) {
-        console.log("Error Fetching Data");
-    }
-
+async function loadIntoMarqueeBox(url, marqueeBox) {
+    console.log(marqueeBox);
+    marqueeBox.innerHTML = "";
+    const response = await fetch(url, {
+        method: 'GET',
+        mode: 'cors'
+    });
+    buildMarquee(marqueeBox, response);
 }
+
+
 // Grab Search Button Form
 const form = document.forms[0];
 
@@ -61,13 +88,20 @@ form.addEventListener("submit", function(event){
         }
     };
     // Grab the Table, Build the Query and Load data into new Table
-    let table = document.querySelector("table");
+    // let table = document.querySelector("table");
+    // Discontinued table in favor of scrolling Marquee Box
+    let marqueeBox = document.querySelector("feed-box");
     let url = 'https://mhnnujmf14.execute-api.us-east-1.amazonaws.com/Prod/getblogs' + query_string;
-    loadIntoTable(url, table)
+    loadIntoMarqueeBox(url, marqueeBox);
+    // loadIntoTable(url, table);
 })
+
 // This will execute on the first read through and grab a pre-defined number of
 // entries from the API. This will not run again so any following refreshes
 // must be done using the Search tool or page refresh
-let table = document.querySelector("table");
+// let table = document.querySelector("table");
+// Discontinued Table in favor of scrolling marquee box
+let marqueeBox = document.getElementById("feed-box");
 let url = 'https://mhnnujmf14.execute-api.us-east-1.amazonaws.com/Prod/getblogs';
-loadIntoTable(url, table)
+loadIntoMarqueeBox(url, marqueeBox);
+// loadIntoTable(url, table);
